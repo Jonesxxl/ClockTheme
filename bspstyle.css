@@ -1,0 +1,80 @@
+:root {
+    --global-bg-color: #fff;
+    --global-font-family: 'grafiti', sans-serif;
+    --global-text-color: #222;
+    --global-font-size: 20px;
+    --global-link-color: blue;
+    --global-link-hover: lightblue;
+    --global-theme-toggle-bg: #ccc;
+    --global-theme-toggle-content: 'LICHT AUS';
+}
+html {
+    background: var(--global-bg-color);
+    font-family: var(--global-font-family);
+    color: var(--global-text-color);
+    transition: all 1s;
+    justify-content: center;
+    text-align: center;
+
+}
+
+a {
+    color: var(--global-link-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 1s;
+    font-family: var(--global-font-family);
+    font-size: var( --global-font-size);
+}
+
+a:hover {
+    color: var(--global-link-hover);
+}
+html[data-theme='dark'] {
+
+    --global-bg-color: #444;
+    --global-text-color: #ddd;
+    --global-link-color: yellow;
+    --global-link-hover: lightyellow;
+    --global-theme-toggle-bg: #000;
+    --global-theme-toggle-content: 'LICHT AN';
+    transition: all 1s;
+  }
+  .theme-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: var(--global-theme-toggle-bg);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-toggle::after {
+    content: var(--global-theme-toggle-content);
+}
+@font-face {
+    font-family: 'grafiti';
+    src: url('3Dumb.ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@keyframes spinning{
+    from {
+        transform: rotate(0deg);
+    }
+ 
+    to{
+        transform: rotate(360deg);
+    }
+}
+.logo{
+    animation: spinning 8s;
+    animation-iteration-count: infinite;
+    padding: 40px;
+    margin: 20px;
+}
